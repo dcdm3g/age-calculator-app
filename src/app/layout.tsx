@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import type { ReactNode } from 'react'
 import { Poppins } from 'next/font/google'
 import './globals.css'
 
@@ -13,11 +14,11 @@ export const metadata: Metadata = {
   description: 'A simple age calculator app.',
 }
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode
-}>) {
+interface RootLayoutProps {
+  children: ReactNode
+}
+
+export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="en">
       <body className={poppins.className}>{children}</body>
