@@ -1,3 +1,6 @@
+import { Label } from '@/components/ui/label'
+import { Input } from '@/components/ui/input'
+import { Button } from '@/components/ui/button'
 import { Arrow } from '@/components/icons/arrow'
 
 export default function Home() {
@@ -11,19 +14,8 @@ export default function Home() {
                 key={field}
                 className="flex max-w-40 flex-col gap-1 md:gap-2"
               >
-                <label
-                  className="text-sm font-bold uppercase tracking-widest text-smokey-grey md:text-base"
-                  htmlFor={field}
-                >
-                  {field}
-                </label>
-
-                <input
-                  className="text-black w-full rounded-lg border border-light-grey px-4 py-3 text-lg font-bold tracking-wide text-off-black caret-purple outline-none transition-colors focus:border-purple md:px-6 md:text-xl [&::-webkit-inner-spin-button]:appearance-none"
-                  type="number"
-                  name={field}
-                  id={field}
-                />
+                <Label htmlFor={field}>{field}</Label>
+                <Input type="number" name={field} id={field} />
               </div>
             ))}
           </div>
@@ -31,12 +23,9 @@ export default function Home() {
           <div className="flex items-center">
             <div className="h-px flex-1 bg-light-grey" />
 
-            <button
-              className="flex size-16 items-center justify-center rounded-full border-2 border-purple bg-purple outline-none transition-colors hover:border-off-black hover:bg-off-black focus:border-off-black md:size-24"
-              aria-label="calculate"
-            >
+            <Button aria-label="calculate">
               <Arrow className="size-6 text-white md:size-11 md:stroke-1" />
-            </button>
+            </Button>
 
             <div className="h-px flex-1 bg-light-grey md:order-first" />
           </div>
