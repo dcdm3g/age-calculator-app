@@ -21,7 +21,9 @@ interface RootLayoutProps {
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="en">
-      <body className={poppins.className}>{children}</body>
+      <body className={poppins.className + ' bg-off-white antialiased'}>
+        {children}
+      </body>
     </html>
   )
 }

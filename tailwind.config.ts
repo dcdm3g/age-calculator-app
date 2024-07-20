@@ -4,7 +4,7 @@ const config: Config = {
   content: ['src/components/**/*.tsx', 'src/app/**/*.tsx'],
   theme: {
     colors: {
-      purple: 'hsl(hsl(259, 100%, 65%))',
+      purple: 'hsl(259, 100%, 65%)',
       'light-red': 'hsl(0, 100%, 67%)',
       white: 'hsl(0, 0%, 100%)',
       'off-white': 'hsl(0, 0%, 94%)',
