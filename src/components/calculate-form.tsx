@@ -97,15 +97,16 @@ export function CalculateForm({ setResult }: CalculateFormProps) {
           const inputRefs = [dayInputRef, monthInputRef, yearInputRef]
           const inputRef = inputRefs[index]
           const error = errors[field]
+          const isError = error || errors.day === 'Must be a valid date'
 
           return (
             <div key={field} className="flex max-w-40 flex-col gap-1 md:gap-2">
-              <Label variant={error ? 'error' : 'default'} htmlFor={field}>
+              <Label variant={isError ? 'error' : 'default'} htmlFor={field}>
                 {field}
               </Label>
 
               <Input
-                variant={error ? 'error' : 'default'}
+                variant={isError ? 'error' : 'default'}
                 ref={inputRef}
                 type="number"
                 name={field}
