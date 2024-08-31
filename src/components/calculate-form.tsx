@@ -39,6 +39,9 @@ export function CalculateForm({ setResult }: CalculateFormProps) {
     const yearString = yearInputRef.current!.value
 
     const currentDate = new Date()
+    const currentYear = currentDate.getFullYear()
+    const currentMonth = currentDate.getMonth()
+    const currentDay = currentDate.getDate()
 
     const {
       data: { year, month, day },
@@ -47,7 +50,9 @@ export function CalculateForm({ setResult }: CalculateFormProps) {
       dayString,
       monthString,
       yearString,
-      currentDate,
+      currentYear,
+      currentMonth,
+      currentDay,
     })
 
     setErrors(errors)
@@ -60,7 +65,9 @@ export function CalculateForm({ setResult }: CalculateFormProps) {
       year,
       month,
       day,
-      currentDate,
+      currentYear,
+      currentMonth,
+      currentDay,
     })
 
     submited.current = false
@@ -76,11 +83,18 @@ export function CalculateForm({ setResult }: CalculateFormProps) {
     const monthString = monthInputRef.current!.value
     const yearString = yearInputRef.current!.value
 
+    const currentDate = new Date()
+    const currentYear = currentDate.getFullYear()
+    const currentMonth = currentDate.getMonth()
+    const currentDay = currentDate.getDate()
+
     const { errors } = parseFields({
       dayString,
       monthString,
       yearString,
-      currentDate: new Date(),
+      currentYear,
+      currentMonth,
+      currentDay,
     })
 
     setErrors(errors)

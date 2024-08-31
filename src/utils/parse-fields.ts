@@ -6,19 +6,19 @@ interface ParseFieldsParams {
   yearString: string
   monthString: string
   dayString: string
-  currentDate: Date
+  currentYear: number
+  currentMonth: number
+  currentDay: number
 }
 
 export function parseFields({
   yearString,
   monthString,
   dayString,
-  currentDate,
+  currentYear,
+  currentMonth,
+  currentDay,
 }: ParseFieldsParams) {
-  const currentYear = currentDate.getFullYear()
-  const currentMonth = currentDate.getMonth()
-  const currentDay = currentDate.getDate()
-
   const { data: year, error: yearError } = parseYear({
     yearString,
     currentYear,
