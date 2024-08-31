@@ -110,6 +110,10 @@ export function CalculateForm({ setResult }: CalculateFormProps) {
         {(['day', 'month', 'year'] as const).map((field, index) => {
           const inputRefs = [dayInputRef, monthInputRef, yearInputRef]
           const inputRef = inputRefs[index]
+
+          const placeholders = ['DD', 'MM', 'YYYY']
+          const placeholder = placeholders[index]
+
           const error = errors[field]
           const isError = error || errors.day === 'Must be a valid date'
 
@@ -125,6 +129,7 @@ export function CalculateForm({ setResult }: CalculateFormProps) {
                 type="number"
                 name={field}
                 id={field}
+                placeholder={placeholder}
                 onChange={handleInputChange}
               />
 
